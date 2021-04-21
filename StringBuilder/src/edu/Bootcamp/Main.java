@@ -26,6 +26,6 @@ public class Main {
 
         finalMessage = exampleOfStringBuilderVariable.toString();
         System.out.println(finalMessage);
-        
+
     }
 }
