@@ -17,33 +17,28 @@ public class Main {
         firstLibrary.addBook(new Book("A Tale of Two Cities"));
         firstLibrary.addBook(new Book("The Lord of the Rings"));
 
-        System.out.println("Library hours:");
+        System.out.println("\nLibrary hours:");
         printOpeningHours();
-        System.out.println();
 
-        System.out.println("Library addresses:");
+        System.out.println("\nLibrary addresses:");
         firstLibrary.printAddress();
         secondLibrary.printAddress();
-        System.out.println();
 
-        System.out.println("On borrowing The Lord of the Rings:");
+        System.out.println("\nBorrowing LotR:");
         firstLibrary.borrowBook("The Lord of the Rings");
         firstLibrary.borrowBook("The Lord of the Rings");
         secondLibrary.borrowBook("The Lord of the Rings");
-        System.out.println();
 
-        System.out.print("Books available in the first library:\n");
+        System.out.println("\nBooks available in the first library:");
         firstLibrary.printAvailableBooks();
-        System.out.println();
-        System.out.println("Books available in the second library:");
+
+        System.out.println("\nBooks available in the second library:");
         secondLibrary.printAvailableBooks();
-        System.out.println();
 
-        System.out.println("Returning The Lord of the Rings:");
+        System.out.println("\nReturning LotR:");
         firstLibrary.returnBook("The Lord of the Rings");
-        System.out.println();
 
-        System.out.println("Books available in the first library:");
+        System.out.println("\nBooks available in the first library:");
         firstLibrary.printAvailableBooks();
     }
 }

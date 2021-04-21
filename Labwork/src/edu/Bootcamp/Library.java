@@ -1,37 +1,35 @@
 package edu.Bootcamp;
 
-import java.util.*;
-
+import java.util.ArrayList;
 
 public class Library {
     String libraryAddress;
     ArrayList<Book> books;
 
-    public Library(String address1) {
-        libraryAddress = address1;
-        books = new ArrayList<Book>();
+    public Library(String address) {
+        this.libraryAddress = address;
+//        this.books = new ArrayList<Book>();
+        this.books = new ArrayList();
     }
 
     public void addBook(Book book1) {
-        books.add(book1);
+        this.books.add(book1);
     }
 
     public void printAddress() {
-        System.out.println(libraryAddress);
+        System.out.println(this.libraryAddress);
     }
 
     public void printAvailableBooks() {
-        Book libraryBook;
         boolean libraryIsEmpty = true;
-
-        for ( int index1 = 0; index1 < books.size(); index1++ ) {
-            libraryBook = books.get(index1);
-            if ( ! ( libraryBook.isBorrowed() ) ) {
-                System.out.println( libraryBook.getTitle() );
+        for ( int index2 = 0; index2 < this.books.size(); ++index2) {
+            Book libraryBook = (Book)this.books.get(index2);
+            if (!libraryBook.isBorrowed()) {
+                System.out.println(libraryBook.getTitle());
                 libraryIsEmpty = false;
             }
-        } if ( libraryIsEmpty ) {
-            System.out.println("Sorry, our catalog is empty at the moment.");
+        } if (libraryIsEmpty) {
+            System.out.println("Sorry, our catalog is empty.");
         }
     }
 
@@ -46,12 +44,12 @@ public class Library {
                     book1.borrowed();
                     System.out.println("You have successfully borrowed " + bookTitle1 + ".");
                 } else {
-                    System.out.println("Sorry, " + bookTitle1 + "is already borrowed.");
+                    System.out.println("Sorry, " + bookTitle1 + " is already borrowed.");
                 }
                 return null;
             }
         }
-        System.out.println("Sorry, this book is not in our catalog.");
+        System.out.println("This book is not in our catalog.");
         return null;
     }
 
@@ -70,11 +68,10 @@ public class Library {
                     found1 = true; break;
                 }
                 else {
-                    System.out.println("Are you sure you got the book from here? It isn't in our system.");
+                    System.out.println("This book doesn't appear to be in our system.");
                 }
             }
         }
-        System.out.println();
         return null;
     }
 }
