@@ -4,18 +4,13 @@ public class Book {
     String title;
     boolean borrowed;
 
-    public Book(String title, boolean borrowed) {
-        this.title = title;
-        this.borrowed = borrowed;
+    public Book(String bookTitle) {
+        this.title = bookTitle;
+        this.borrowed = false;
     }
 
     public String toString() {
         return "book{title='" + this.title + "', borrowed=" + this.borrowed + "}";
-    }
-
-    public Book(String bookTitle) {
-        this.title = bookTitle;
-        this.borrowed = false;
     }
 
     public void borrowed() {
